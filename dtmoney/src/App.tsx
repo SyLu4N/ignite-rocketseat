@@ -4,13 +4,6 @@ import { Header } from './components/Header';
 import { NewTrasctionsModal } from './components/NewTransactionsModal';
 import { GlobalStyle } from './styles/global';
 
-{
-  /* <ModalButton
-isModalOpem={isModalOpem}
-handleModalClose={handleModalClose}
-/> */
-}
-
 export function App() {
   const [isModalOpem, setIsModalOpen] = useState(false);
 
