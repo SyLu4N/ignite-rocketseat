@@ -1,11 +1,11 @@
 import React, { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 
-import { api } from '../../services/api';
 import { Container, TransactionTypeContainer, RadioBox } from './styles';
 import closeModal from '../../assets/closeModal.svg';
 import income from '../../assets/entradas.svg';
 import outcome from '../../assets/saidas.svg';
+import { useTransactions } from '../../hooks/useTransactions';
 
 interface NewTrasctionsModalProps {
   isModalOpem: boolean;
@@ -15,19 +15,32 @@ interface NewTrasctionsModalProps {
 Modal.setAppElement('#root');
 
 export function NewTrasctionsModal(props: NewTrasctionsModalProps) {
-  const [type, setType] = useState('deposit');
-  const [transctionTitle, setTransctionTitle] = useState('');
-  const [transctionValue, setTransctionValue] = useState(0);
-  const [transctionCategory, setTransctionCategory] = useState('');
+  const { createTransaction } = useTransactions();
 
-  function sendCreateNewTransaction(e: FormEvent) {
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [type, setType] = useState('deposit');
+  const [category, setCategory] = useState('');
+
+  async function sendCreateNewTransaction(e: FormEvent): Promise<void> {
     e.preventDefault();
 
-    const data = { transctionTitle, transctionValue, transctionCategory, type };
-
-    api.post('/transactions', data);
+    await createTransaction({
+      title,
+      type,
+      category,
+      amount,
+    });
+    clearModal();
+    props.handleModalClose();
   }
 
+  function clearModal(): void {
+    setTitle('');
+    setAmount(0);
+    setType('deposit');
+    setCategory('');
+  }
   return (
     <Modal
       isOpen={props.isModalOpem}
@@ -47,15 +60,15 @@ export function NewTrasctionsModal(props: NewTrasctionsModalProps) {
 
         <input
           placeholder="Título"
-          onChange={(e) => setTransctionTitle(e.target.value)}
-          value={transctionTitle}
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
         />
 
         <input
           placeholder="Valor"
           type="number"
-          onChange={(e) => setTransctionValue(Number(e.target.value))}
-          value={transctionValue}
+          onChange={(e) => setAmount(Number(e.target.value))}
+          value={amount}
         />
 
         <TransactionTypeContainer>
@@ -76,14 +89,14 @@ export function NewTrasctionsModal(props: NewTrasctionsModalProps) {
             activeColor="red"
           >
             <img src={outcome} alt="Saida" />
-            <span>Entrada</span>
+            <span>Saída</span>
           </RadioBox>
         </TransactionTypeContainer>
 
         <input
           placeholder="Categoria"
-          onChange={(e) => setTransctionCategory(e.target.value)}
-          value={transctionCategory}
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
         />
 
         <button type="submit">Cadastrar</button>
