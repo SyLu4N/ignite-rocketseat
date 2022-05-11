@@ -4,7 +4,8 @@ interface SubscribeButtonProps {
   priceId: string;
 }
 
-export function SubscribeButton(prosp: SubscribeButtonProps) {
+export function SubscribeButton(props: SubscribeButtonProps) {
+  console.log(props.priceId);
   return (
     <button
     type='button'

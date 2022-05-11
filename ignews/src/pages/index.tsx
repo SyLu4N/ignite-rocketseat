@@ -38,13 +38,8 @@ export default function Home(props: HomeProps) {
 //GetServerSideProps === Sempre atualiza
 //GetStacticProps === Atualiza em um determinado tempo
 
-export const getServerSideProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1Ky4DaBVvAjyeoqcv5S0BMcK',
-  /*
-  Para mostras mais dados :
-  {
-    expand: ['product'] traz os dados do produto
-  } */
+export const getStaticProps: GetStaticProps = async () => {
+  const price = await stripe.prices.retrieve('price_1Ky4DaBVvAjyeoqcv5S0BMcK'
   );
 
   const product = {
@@ -59,6 +54,6 @@ export const getServerSideProps: GetStaticProps = async () => {
     props: {
       product,
     },
-    revalidate: 60 * 60 * 24, //24 hours
+    revalidate: 60 * 60 * 24,
   };
 }
