@@ -9,12 +9,36 @@
   font-weight: bold;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   transition: filter 0.2s;
 
   &:hover{
     filter: brightness(0.8);
+  }
+
+  &:disabled{
+    filter: brightness(0.7);
+    cursor: no-drop;
+  }
+
+  div{
+    display: flex;
+
+    span{
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      color: black;
+      animation: rotate 300s infinite;
+    }
+  }
+}
+
+
+@keyframes rotate {
+  0%{
+    transform: rotate(600000deg);
   }
 }
