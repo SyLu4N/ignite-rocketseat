@@ -1,0 +1,1 @@
+NotFound 404 = erro de comunicação (possivelmente erro com a base de dados)
