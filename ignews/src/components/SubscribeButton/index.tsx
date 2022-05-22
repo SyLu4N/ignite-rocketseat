@@ -1,9 +1,12 @@
-import { signIn, useSession } from 'next-auth/react';
 import { useState } from 'react';
+import { BiLoaderAlt } from 'react-icons/bi';
+
+import { signIn, useSession } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
+import { useRouter } from 'next/router';
+
 import { api } from '../../services/api';
 import { getStripeJs } from '../../services/stripeJs';
-import { BiLoaderAlt } from 'react-icons/bi'
-
 import styles from './styles.module.scss';
 
 interface SubscribeButtonProps {
@@ -12,6 +15,7 @@ interface SubscribeButtonProps {
 
 export function SubscribeButton(props: SubscribeButtonProps) {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const [loading, setLoading] = useState(false);
 
@@ -19,6 +23,11 @@ export function SubscribeButton(props: SubscribeButtonProps) {
     setLoading(true);
     if (!session) {
       signIn('github');
+      return;
+    }
+
+    if (session.activeSubscription) {
+      router.push('/posts');
       return;
     }
 
@@ -39,14 +48,20 @@ export function SubscribeButton(props: SubscribeButtonProps) {
 
   return (
     <button
-      type='button'
+      type="button"
       className={styles.subscribeButton}
       onClick={handleSubscribe}
       disabled={loading}
     >
-      <div className='containerTeste'>
+      <div className="containerTeste">
         Subscribe now
-        {loading ? <span className='loading'><BiLoaderAlt /></span> : ''}
+        {loading ? (
+          <span className="loading">
+            <BiLoaderAlt />
+          </span>
+        ) : (
+          ''
+        )}
       </div>
     </button>
   );
