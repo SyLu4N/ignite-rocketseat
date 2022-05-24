@@ -29,7 +29,6 @@
     <img src="./assets/dtMoney.gif" alt="Funcionamento" />
    </a>
  </h6>
- <h2></h2>
 
  <h3>📚 Código</h3>
  <h6 align="center">
