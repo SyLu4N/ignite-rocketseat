@@ -1,0 +1,30 @@
+HTML E CSS no Curso em Vídeo
+
+Sendo meu primeiro curso na área de desenvolvimento web, nele foi abordado a semântica do HTML, como estruturar e desenvolver da maneira certa uma site com HTML. Também foi abordado CSS, usando recursos novos como Display Grid e Flex, usamos bastante o efeito parallax e entre outros recursos do CSS.
+
+Inicio Fevereiro 2021 / Abril 2021
+-------------------------------------------------------------------------------------------------------------------
+HTML E CSS na Udemy
+
+Com um pouco de noção adquirido pelo curso anterior, entrei no curso de HTML e CSS com o Luiz Ótavio  para aprimorar o meu conhecimento e adquirir novas noções de estruturação de projeto.
+
+Inicio Abril 2021 / Junho 2021
+-------------------------------------------------------------------------------------------------------------------
+Desenvolvimento Web (Javascript Typescript)
+
+Já com esse curso foi minha introdução ao mundo de bibliotecas, como o ReactJs, NextJs, Babel, NodeJs, Axios, MySQL e entre outros recursos usados. O curso é bem extenso, tendo mais de 140 horas e muitos desafios, foi um período de MUITO aprendizado, demorei até que bastante para terminar o curso, por desenvolver projetos em paralelo para fixar melhor o conhecimento, mas, sou muito grato por tudo que foi ensinado no curso.
+
+Inicio Junho 2021 / Fevereiro 2022
+-------------------------------------------------------------------------------------------------------------------
+NLW Return Rocketseat 
+
+Já com conhecimento em NodeJs e ReactJs em Typescript, a NLW me ajudou a ter melhores noções de como estruturar os meus projetos, como devo aplicar a princípios do S.O.L.I.D no nodeJs. Foi um curso breve, porem bem intuitivo.
+
+Inicio Abril 2022 / Abril 2022
+-------------------------------------------------------------------------------------------------------------------
+Ignite Rocketseat 
+
+Por ultimo e creio que o mais importante seja a trila Ignite da Rocketseat, agora tendo uma certa noção na programação e entendendo melhor os conceitos da linguagem, consigo absorver melhor os conceitos passados, ainda não terminei, mas está sendo incrível o aprendizado até aqui!
+
+Inicio Abril 2022 / 
+-------------------------------------------------------------------------------------------------------------------
