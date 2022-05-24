@@ -9,17 +9,19 @@ export const Container = styled.div`
   }
 
   th {
-    color: var(--text-body);
     font-weight: 400;
-    padding: 1rem 2rem;
     text-align: left;
+
+    padding: 1rem 2rem;
+    color: var(--text-body);
   }
 
   td {
-    padding: 1rem 2rem;
-    border: 0;
     background: #fff;
     color: var(--text-body);
+
+    padding: 1rem 2rem;
+    border: 0;
     border-radius: 0.25rem;
 
     &:first-child {
