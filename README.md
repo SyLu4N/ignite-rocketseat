@@ -21,7 +21,7 @@
  ✓ Working With MirageJs! <br>
  ✓ Working With Polished! <br>
 
- <h1>✅Project</h1>
+ <h1>✅Projects</h1>
  <h3>📚 Dt Money</h3>
 
  <h6 align="center">
