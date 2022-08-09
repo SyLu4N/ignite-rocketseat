@@ -11,12 +11,16 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as yup from 'yup';
 
 import { Input } from '../../components/Form/Input';
 import { Header } from '../../components/Header';
 import { Sidebar } from '../../components/Sidebar';
+import { api } from '../../services/api';
+import { queryClient } from '../../services/queryClient';
 
 type CreateUserFormData = {
   name: string;
@@ -42,13 +46,30 @@ export default function CreateUser(): JSX.Element {
     resolver: yupResolver(CreateUserFormSchema),
   });
 
+  const router = useRouter();
+
+  const createUser = useMutation(
+    async (user: CreateUserFormData) => {
+      const response = await api.post('users', {
+        user: { ...user, created_at: new Date() },
+      });
+
+      return response.data.user;
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(['users']);
+      },
+    }
+  );
+
   const { errors } = formState;
 
   const HandleCreateUser: SubmitHandler<CreateUserFormData> = async (
     values
   ) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
+    await createUser.mutateAsync(values);
+    router.push('/users');
   };
 
   return (
