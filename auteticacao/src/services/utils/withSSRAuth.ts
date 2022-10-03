@@ -1,9 +1,5 @@
 import decode from 'jwt-decode';
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-} from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { destroyCookie, parseCookies } from 'nookies';
 
 import { AuthTokenError } from '../errors/AuthTokenError';
@@ -18,9 +14,7 @@ export function withSSRAuth<P>(
   fn: GetServerSideProps<P>,
   options?: WithSSRAuthOptions
 ) {
-  return async (
-    ctx: GetServerSidePropsContext
-  ): GetServerSidePropsResult<P> => {
+  return async (ctx: GetServerSidePropsContext) => {
     const cookies = parseCookies(ctx);
     const token = cookies['nextauth.token'];
 
