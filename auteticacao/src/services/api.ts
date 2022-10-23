@@ -8,14 +8,14 @@ import { mySetCookie } from './utils/setCookie';
 
 type CtxProps = undefined | GetServerSidePropsContext;
 
-let isRefreshing = false;
-let failedRequestQueue = [] as any[];
+const isRefreshing = false;
+const failedRequestQueue = [] as any[];
 
 export function setupAPIClient(ctx: CtxProps = undefined) {
   let cookies = parseCookies(ctx);
 
   const api = axios.create({
-    baseURL: 'http://localhost:3333',
+    baseURL: 'http://localhost:3000',
     headers: {
       Authorization: `Bearer ${cookies['nextauth.token']}`,
     },
