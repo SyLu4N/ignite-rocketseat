@@ -1,0 +1,50 @@
+{
+  "name": "dashgo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@chakra-ui/react": "1.8",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@hookform/resolvers": "^2.9.6",
+    "@tanstack/react-query": "^4.0.10",
+    "@types/react-query": "^1.2.9",
+    "apexcharts": "^3.35.3",
+    "axios": "^0.27.2",
+    "framer-motion": "^6.3.16",
+    "next": "^12.1.6",
+    "react": "17",
+    "react-apexcharts": "^1.4.0",
+    "react-dom": "17",
+    "react-hook-form": "^7.33.1",
+    "react-icons": "^4.4.0",
+    "react-query": "^4.0.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "@types/react": "^18.0.12",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "7.28.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "@faker-js/faker": "^7.3.0",
+    "@types/faker": "^6.6.9",
+    "faker": "^6.6.6",
+    "miragejs": "^0.1.45",
+    "typescript": "^4.7.3"
+  }
+}
