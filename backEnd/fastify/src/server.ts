@@ -2,14 +2,13 @@ import fastify from "fastify";
 import { knex } from "./database";
 import crypto from "node:crypto";
 import { env } from "./env";
+import cookie from "@fastify/cookie";
+import { transactionsRoutes } from "./routes/transactions";
 
 const app = fastify();
 
-app.get("/hello", async () => {
-  const transction = await knex("transactions").select("*");
-
-  return transction;
-});
+app.register(cookie);
+app.register(transactionsRoutes, { prefix: "transactions" });
 
 app
   .listen({
