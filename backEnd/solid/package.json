@@ -1,0 +1,25 @@
+{
+  "name": "solid",
+  "version": "1.0.0",
+  "description": "GymPass Style app.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.9.0",
+    "tsup": "7.2.0",
+    "tsx": "4.0.0",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "fastify": "4.24.3",
+    "zod": "3.22.4"
+  }
+}
