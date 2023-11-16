@@ -1,9 +1,7 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
-import { PrismaUsersRepository } from '@/repositories/prisma/users-reporsitory';
-import { AuthenticateUseCase } from '@/use-cases/authenticate';
-import { authenticateBodySchema } from 'schema/authenticateBody';
 import { InvalidCredentialsError } from '@/use-cases/errors/invalid-credentials-error';
 import { makeAuthenticateUseCase } from '@/use-cases/factories/make-authenticate-use-case';
+import { FastifyRequest, FastifyReply } from 'fastify';
+import { authenticateBodySchema } from 'schema/authenticateBody';
 
 export async function authenticate(req: FastifyRequest, res: FastifyReply) {
   const { email, password } = authenticateBodySchema.parse(req.body);

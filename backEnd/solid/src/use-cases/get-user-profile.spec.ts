@@ -1,9 +1,9 @@
-import { expect, test, describe, beforeEach } from 'vitest';
-
 import { InmemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
 import { hash } from 'bcryptjs';
+import { expect, test, describe, beforeEach } from 'vitest';
+
+import { ResourceNotFoundError } from './errors/resource-not-found-error';
 import { GetUserProfileUseCase } from './get-user-profile';
-import { resourceNotFoundError } from './errors/resource-not-found-error';
 
 let userRepository: InmemoryUsersRepository;
 let sut: GetUserProfileUseCase;
@@ -29,6 +29,6 @@ describe('Get User Profile Use Case', () => {
   test('Não deve ser possível visualizar o perfil com id um inválido', async () => {
     await expect(() =>
       sut.execute({ userId: 'not-existing-id' })
-    ).rejects.toBeInstanceOf(resourceNotFoundError);
+    ).rejects.toBeInstanceOf(ResourceNotFoundError);
   });
 });
