@@ -1,4 +1,4 @@
-import { PrismaUsersRepository } from '@/repositories/prisma/users-reporsitory';
+import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-reporsitory';
 
 import { AuthenticateUseCase } from '../authenticate';
 
