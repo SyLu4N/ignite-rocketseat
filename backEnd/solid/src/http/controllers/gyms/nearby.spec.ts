@@ -13,7 +13,7 @@ describe('Nearby Gym (e2e)', () => {
   });
 
   test('Deve ser possível buscar academias proximas', async () => {
-    const { token } = await createAndAuthenticateUser(app);
+    const { token } = await createAndAuthenticateUser(app, true);
 
     await request(app.server)
       .post('/gyms')
