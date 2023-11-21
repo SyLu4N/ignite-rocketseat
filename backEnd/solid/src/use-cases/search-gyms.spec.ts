@@ -1,15 +1,15 @@
 import { InmemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
 import { expect, test, describe, beforeEach } from 'vitest';
 
-import { SearchGymUseCase } from './search-gyms';
+import { SearchGymsUseCase } from './search-gyms';
 
 let gymsRepository: InmemoryGymsRepository;
-let sut: SearchGymUseCase;
+let sut: SearchGymsUseCase;
 
 describe('Search Gyms Use Case', () => {
   beforeEach(async () => {
     gymsRepository = new InmemoryGymsRepository();
-    sut = new SearchGymUseCase(gymsRepository);
+    sut = new SearchGymsUseCase(gymsRepository);
   });
 
   test('Deve ser possível localizar uma academia pelo nome', async () => {

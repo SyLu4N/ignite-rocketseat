@@ -1,7 +1,7 @@
 import { UserAlreadyExistsError } from '@/use-cases/errors/user-already-exists-error';
 import { makeRegisterUseCase } from '@/use-cases/factories/make-register-use-case';
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { registerBodySchema } from 'schema/registerBody';
+import { registerBodySchema } from 'schemas/registerBody';
 
 export async function register(req: FastifyRequest, res: FastifyReply) {
   const { name, email, password } = registerBodySchema.parse(req.body);
