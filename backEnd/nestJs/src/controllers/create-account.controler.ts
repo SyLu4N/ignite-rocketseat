@@ -31,12 +31,12 @@ export class CreateAccountController {
       where: { email },
     });
 
-    const passwordHash = await hash(password, 8);
+    const hashedPassword = await hash(password, 8);
 
     if (userWithSameEmail) throw new ConflictException('E-mail já cadastrado');
 
     await this.prisma.user.create({
-      data: { name, email, password: passwordHash },
+      data: { name, email, password: hashedPassword },
     });
   }
 }
